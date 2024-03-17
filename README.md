@@ -1,2 +1,2 @@
 # ValoRankBot
-A Discord Bot to receive Valorant Competitive informations about users
+A Discord Bot for Valorant Competitive stats and player insights.
