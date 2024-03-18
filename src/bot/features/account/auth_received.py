@@ -76,7 +76,6 @@ class AuthReceived(Extension):
 
         options = []
         for riot_acc in riot_connections:
-            print(riot_acc.name)
             options.append(
                 StringSelectOption(
                     label=riot_acc.name,
