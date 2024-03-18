@@ -1,19 +1,10 @@
 addHandler('transform', (request, context) => {
-    // Function to parse query string
-    function parseQueryString(queryString) {
-        const params = {};
-        const queryStringWithoutQuestionMark = queryString.substring(1);
-        const queryComponents = queryStringWithoutQuestionMark.split('&');
-        for (const component of queryComponents) {
-            const [key, value] = component.split('=');
-            params[key] = value;
-        }
-        return params;
+    const code = request.parsed_query["code"]
+    if (code === undefined) {
+        console.error("Code is undefined")
+        return null
     }
-
-    // Parse the query string to extract the value of the "code" parameter
-    const queryParams = parseQueryString(request.query);
-    const code = queryParams['code'];
+    console.log(code)
 
     // create a json like str
     const payload = {
