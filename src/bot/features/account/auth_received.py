@@ -1,7 +1,7 @@
 from interactions import Extension
 from interactions import listen
 from interactions.api.events import MessageCreate
-
+from interactions import ActionRow, StringSelectMenu, StringSelectOption
 from discordoauth2 import Client as AuthClient, exceptions
 
 from json import loads, JSONDecodeError
@@ -9,7 +9,7 @@ from json import loads, JSONDecodeError
 from utils import BotConfig, AuthEvent, UserData, Connection
 
 
-class Auth(Extension):
+class AuthReceived(Extension):
     @listen(MessageCreate)
     async def on_message_create(self, event: MessageCreate):
         config: BotConfig = event.bot.config
@@ -67,13 +67,36 @@ class Auth(Extension):
             return
 
         # use the data to authorize the user
-        user = event.message.bot.get_user(user_data.id)
-        temp_content = [
-            "We found the following riotgames accounts on your discord account:"
-        ]
+        if len(riot_connections) == 0:
+            # no riot account found
+            return
+        elif len(riot_connections) > 25:
+            # remove accounts when more then 25
+            riot_connections = riot_connections[:25]
+
+        options = []
         for riot_acc in riot_connections:
-            temp_content.append(riot_acc.name)
-        await user.send('\n'.join(temp_content))
+            print(riot_acc.name)
+            options.append(
+                StringSelectOption(
+                    label=riot_acc.name,
+                    value=riot_acc.name,
+                    description=None,
+                    emoji="<:valorant:1219326778645020753>"
+                )
+            )
+
+        components = [
+            ActionRow(
+                StringSelectMenu(
+                    options,
+                    placeholder="Choose Account",
+                    custom_id="connect_account"
+                )
+            )
+        ]
+        user = event.message.bot.get_user(user_data.id)
+        await user.send(components=components)
 
         # add reaction 'speech_balloon'
         await event.message.add_reaction(":speech_balloon:")
