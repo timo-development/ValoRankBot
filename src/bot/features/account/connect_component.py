@@ -24,6 +24,8 @@ class ConnectComponent(Extension):
         if isinstance(account, Error):
             # when account can not be fetched
             await user.send(f"Error: {str(account)}")
+            # todo: embed
+            # todo: message to user (how to link the account in discord)
             return
 
         # when account can be fetched

@@ -59,12 +59,14 @@ class AuthReceived(Extension):
             return
 
         # check if state is equal to user id
+        # todo: i should re-think the use of state
         if user_data.id != int(auth_event.state):
             return
 
         # use the data to authorize the user
         if len(riot_connections) == 0:
             # no riot account found
+            # todo: message to user (how to link the account in discord)
             return
         elif len(riot_connections) > 25:
             # remove accounts when more then 25
