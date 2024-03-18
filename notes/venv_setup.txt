@@ -1,0 +1,12 @@
+cd [directory]
+py -3 -m venv venv
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+venv/Scripts/activate
+
+pip install --ignore-installed --no-cache-dir --upgrade discord-py-interactions
+pip install --ignore-installed --no-cache-dir --upgrade discord-oauth2.py
+pip install --ignore-installed --no-cache-dir --upgrade pydantic
+pip install --ignore-installed --no-cache-dir --upgrade requests
+
+pip freeze > requirements.txt
