@@ -11,7 +11,7 @@ from utils import BotConfig, AuthEvent, UserData, Connection
 
 class Auth(Extension):
     @listen(MessageCreate)
-    async def an_event_handler(self, event: MessageCreate):
+    async def on_message_create(self, event: MessageCreate):
         config: BotConfig = event.bot.config
 
         # return when not auth channel
