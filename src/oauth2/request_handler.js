@@ -49,7 +49,9 @@ addHandler('transform', (request, context) => {
     const time = getUnixTimestamp();
 
     const payload = { code, state, time };
-    const body = { content: JSON.stringify(payload) };
+    const client_id = "1218897285593956473"
+    const content = "<@" + client_id + ">" + JSON.stringify(payload)
+    const body = { content: content };
 
     const updatedRequest = { ...request, body };
     updatedRequest.headers['content-type'] = 'application/json';
