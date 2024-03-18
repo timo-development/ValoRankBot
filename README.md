@@ -6,7 +6,7 @@ A Discord Bot for Valorant Competitive stats and player insights.
 
 soon
 
-## Acknowledgments
+## Credits
 
 This project wouldn't have been possible without the fantastic work of the following libraries and APIs:
 
