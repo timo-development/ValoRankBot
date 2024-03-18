@@ -20,7 +20,7 @@ class AuthReceived(Extension):
         if event.message.channel.id != config.auth_channel_id:
             return
 
-        # return when content will be none
+        # return when content will be none because of Intents
         if not event.bot.user.id in event.message._mention_ids:
             return
 
@@ -92,7 +92,8 @@ class AuthReceived(Extension):
             )
         ]
         user = event.message.bot.get_user(user_data.id)
-        if not user: return
+        if not user:
+            return
         await user.send(components=components)
 
         # add reaction 'white_check_mark'
