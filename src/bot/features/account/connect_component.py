@@ -2,6 +2,7 @@ from interactions import Extension
 
 from interactions import listen
 from interactions.api.events import Component
+from interactions.client.errors import Forbidden
 
 from valo_api import v1_account, Account, Error
 
@@ -33,5 +34,14 @@ class ConnectComponent(Extension):
         await user.send(auth_received_account_connected.get(event.ctx.locale, 'en-GB'))
         await user.send(f"{account.name}#{account.tag} (`{account.puuid}`)")
         # todo: embed
-        # todo: rename person
+        # todo: rename persons should use the guild_settings
+        guild = event.ctx.bot.get_guild(1219136466043670649)
+        try:
+            member = guild.get_member(event.ctx.author.id)
+            await member.edit_nickname(f"{account.name}#{account.tag}", reason="Valorant Account")
+        except Forbidden:
+            print("Bot can not rename")
+        except Exception as e:
+            print(type(e))
+            print(e)
         # todo: save in database

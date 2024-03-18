@@ -9,7 +9,7 @@ from utils import BotConfig
 bot = Client(
     delete_unused_application_cmds=True,  # todo: not ok for prod
     disable_dm_commands=True,
-    intents=Intents.DEFAULT,
+    intents=Intents.DEFAULT | Intents.GUILD_MEMBERS,
     send_command_tracebacks=True,  # todo: not ok for prod
     send_not_ready_messages=True,
     status=Status.ONLINE,
