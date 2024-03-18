@@ -12,24 +12,29 @@ bot = Client(
     send_not_ready_messages=True,
     status=Status.ONLINE,
     activity=Activity(
-        name="",
+        name="v0.0.0",
         state="by @EchterTimo"
     )
 )
 
 # load the config file
-with open("src/config.json", 'r', encoding="utf-8") as file:
+with open("src/bot/config.json", 'r', encoding="utf-8") as file:
     config_data: dict = load(file)
 
 # save config data bot class
 bot.config = BotConfig(**config_data)
 
-# load extensions
-extensions = []
+# define extensions to load
+extensions = [
+    'features.account.auth'
+]
 
 
 def main():
     for ext in extensions:
         bot.load_extension(ext)
     print(f"loaded {len(extensions)} extensions")
-    bot.start(bot.config.token)
+    bot.start(bot.config.bot_token)
+
+if __name__ == '__main__':
+    main()
