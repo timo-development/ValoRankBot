@@ -36,7 +36,8 @@ bot.auth = AuthClient(
 
 # define extensions to load
 extensions = [
-    'features.account.auth'
+    'features.account.auth',
+    'features.account.connect'
 ]
 
 
