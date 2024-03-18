@@ -1,4 +1,6 @@
 from interactions import Client, Intents, Status, Activity
+from discordoauth2 import Client as AuthClient
+
 from json import load
 from utils import BotConfig
 
@@ -21,8 +23,16 @@ bot = Client(
 with open("src/bot/config.json", 'r', encoding="utf-8") as file:
     config_data: dict = load(file)
 
-# save config data in bot class
+# save BotConfig instance in bot class
 bot.config = BotConfig(**config_data)
+
+# save AuthClient instance in bot class
+bot.auth = AuthClient(
+    id=bot.config.client_id,
+    secret=bot.config.client_secret,
+    redirect=None,
+    bot_token=None
+)
 
 # define extensions to load
 extensions = [
@@ -35,6 +45,7 @@ def main():
         bot.load_extension(ext)
     print(f"loaded {len(extensions)} extensions")
     bot.start(bot.config.bot_token)
+
 
 if __name__ == '__main__':
     main()
