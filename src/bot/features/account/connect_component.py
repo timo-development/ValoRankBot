@@ -30,3 +30,4 @@ class ConnectComponent(Extension):
         await event.ctx.message.delete()
         await user.send(auth_received_account_connected.get(event.ctx.locale, 'en-GB'))
         await user.send(f"{account.name}#{account.tag} (`{account.puuid}`)")
+        # todo: embed
