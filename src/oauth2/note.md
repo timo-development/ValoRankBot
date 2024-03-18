@@ -6,7 +6,9 @@ To make it easier, I'm using an Event Gateway Service called [Hookdeck.com](http
 
 Using an [request handler](./request_handler.js) you can modify the transformation of the data in a discord friendly format.
 
-The bot receives a [MessageCreate](https://interactions-py.github.io/interactions.py/API%20Reference/API%20Reference/events/discord/#interactions.api.events.discord.MessageCreate) event and utilizes the provided code to access the user's data. After retrieving the necessary information, the code is revoked to ensure it cannot be used again.
+The bot receives a [MessageCreate](https://interactions-py.github.io/interactions.py/API%20Reference/API%20Reference/events/discord/#interactions.api.events.discord.MessageCreate) event and utilizes the provided code to access the user's data.
+
+After retrieving the necessary information, the OAuth2 code is revoked to ensure it cannot be used again.
 
 ## Read before replicating
 
