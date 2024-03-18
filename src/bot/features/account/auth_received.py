@@ -22,9 +22,6 @@ class AuthReceived(Extension):
         if not event.bot.user.id in event.message._mention_ids:
             return
 
-        # add reaction 'eye'
-        await event.message.add_reaction(":eye:")
-
         # remove the mention from the message
         content = event.message.content.replace(
             event.bot.user.mention,
@@ -58,9 +55,6 @@ class AuthReceived(Extension):
             access.revoke()
         except exceptions.HTTPException:
             return
-
-        # add reaction 'white_check_mark'
-        await event.message.add_reaction(":white_check_mark:")
 
         # check if state is equal to user id
         if user_data.id != int(auth_event.state):
@@ -97,5 +91,5 @@ class AuthReceived(Extension):
         user = event.message.bot.get_user(user_data.id)
         await user.send(components=components)
 
-        # add reaction 'speech_balloon'
-        await event.message.add_reaction(":speech_balloon:")
+        # add reaction 'white_check_mark'
+        await event.message.add_reaction(":white_check_mark:")
