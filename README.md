@@ -8,7 +8,7 @@ soon
 
 ## Acknowledgments
 
-This project wouldn't have been possible without the fantastic work of the following libraries:
+This project wouldn't have been possible without the fantastic work of the following libraries and APIs:
 
 - [interactions.py](https://github.com/interactions-py/interactions.py)
 - [unofficial-valorant-api](https://github.com/Henrik-3/unofficial-valorant-api) by [Henrik-3](https://github.com/Henrik-3/)
