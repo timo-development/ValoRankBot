@@ -1,6 +1,9 @@
 from interactions import LocalisedName, LocalisedDesc
 
 
+# ----------
+# localization for commands
+
 # /account
 account_name = LocalisedName(
     english_us="account",
@@ -42,3 +45,16 @@ account_disconnect_desc = LocalisedDesc(
 
 # /account privacy request-data
 # todo
+
+# ----------
+# localization for other stuff
+
+auth_received_connect_account = {
+    "en-GB": account_connect_desc.english_us,
+    "de": account_connect_desc.german,
+}
+
+auth_received_choose_account = {
+    "en-GB": "Choose Account",
+    "de": "Wähle Account aus"
+}

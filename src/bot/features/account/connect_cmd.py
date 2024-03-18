@@ -1,7 +1,7 @@
 from interactions import Extension
 from interactions import slash_command, SlashContext, Embed, ActionRow, Button, ButtonStyle
 
-from ._lang import account_name, account_desc, account_connect_name, account_connect_desc
+from ._lang import account_name, account_desc, account_connect_name, account_connect_desc, auth_received_connect_account
 
 from discordoauth2 import Client as AuthClient
 
@@ -26,7 +26,7 @@ class ConnectCmd(Extension):
             ActionRow(
                 Button(
                     style=ButtonStyle.URL,
-                    label="Connect Riot Games account",
+                    label=auth_received_connect_account.get(ctx.locale, 'en-GB'),
                     url=url,
                 )
             )

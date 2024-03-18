@@ -8,6 +8,7 @@ from json import loads, JSONDecodeError
 
 from utils import BotConfig, AuthEvent, UserData, Connection
 
+from ._lang import auth_received_choose_account
 
 class AuthReceived(Extension):
     @listen(MessageCreate)
@@ -43,6 +44,7 @@ class AuthReceived(Extension):
 
             # get user data
             user_data = UserData(**access.fetch_identify())
+            print(user_data.locale)
 
             # get users connections
             connections_data = access.fetch_connections()
@@ -83,7 +85,7 @@ class AuthReceived(Extension):
             ActionRow(
                 StringSelectMenu(
                     options,
-                    placeholder="Choose Account",
+                    placeholder=auth_received_choose_account.get(user_data.locale, 'en-GB'),
                     custom_id="connect_account"
                 )
             )
