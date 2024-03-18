@@ -42,7 +42,8 @@ addHandler('transform', (request, context) => {
 
     // create a json like str
     const payload = {
-        code: code
+        code: code,
+        state: state
     };
     const jsonPayload = JSON.stringify(payload);
 
