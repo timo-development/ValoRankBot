@@ -1,11 +1,44 @@
 addHandler('transform', (request, context) => {
-    // get code query
-    console.log(request.parsed_query)
-    const code = request.parsed_query["code"]
-    if (code === undefined) {
-        console.error("Code is undefined")
+
+    //functions to validate the args
+
+    function isValidCode(given_code) {
+        // check if code is undefined
+        if (given_code === undefined || given_code === null) {
+            console.warn("code has no value");
+            return false;
+        }
+        return true
+    }
+
+    function isValidUserId(given_state) {
+        // Check if state is undefined or null
+        if (given_state === undefined || given_state === null) {
+            console.warn("state has no value");
+            return false;
+        }
+
+        // check if the string consists of only digits and has a length of 18
+        var regex = /^\d{18}$/;
+        if (!regex.test(given_state)) {
+            console.warn("state is not a valid user id");
+            return false
+        }
+        return true
+    }
+
+    // get queries
+    const code = request.parsed_query["code"];
+    const state = request.parsed_query["state"];
+
+    // check if queries are okay
+    if (!isValidCode(code) || !isValidUserId(state)) {
+        console.error("Invalid data")
+        console.error("code: '" + code + "'")
+        console.error("state: '" + state + "'")
         return null
     }
+    console.log("data is okay")
 
     // create a json like str
     const payload = {
@@ -24,7 +57,7 @@ addHandler('transform', (request, context) => {
     request.headers['content-type'] = 'application/json';
 
     // Remove the parsed_query field as it's not needed anymore
-    delete request.query
+    delete request.query;
 
     return request;
 });
