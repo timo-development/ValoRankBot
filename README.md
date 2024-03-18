@@ -1,6 +1,6 @@
 # [ValoRankBot](https://github.com/timo-development/ValoRankBot)
 
-A Discord Bot for Valorant Competitive stats and player insights.
+A Discord bot for Valorant competitive stats and player insights.
 
 ## Features
 
