@@ -5,6 +5,8 @@ from interactions.api.events import Component
 
 from valo_api import v1_account, Account, Error
 
+from ._lang import auth_received_account_connected
+
 
 class ConnectComponent(Extension):
     @listen(Component)
@@ -26,4 +28,5 @@ class ConnectComponent(Extension):
 
         # when account can be fetched
         await event.ctx.message.delete()
-        await user.send(f"Connected with {account.name}#{account.tag} (`{account.puuid}`)")
+        await user.send(auth_received_account_connected.get(event.ctx.locale, 'en-GB'))
+        await user.send(f"{account.name}#{account.tag} (`{account.puuid}`)")

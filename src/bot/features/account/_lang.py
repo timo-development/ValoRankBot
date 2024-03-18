@@ -58,3 +58,8 @@ auth_received_choose_account = {
     "en-GB": "Choose Account",
     "de": "Wähle Account aus"
 }
+
+auth_received_account_connected = {
+    "en-GB": "Account connected",
+    "de": "Account verbunden"
+}

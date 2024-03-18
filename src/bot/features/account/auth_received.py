@@ -92,6 +92,7 @@ class AuthReceived(Extension):
             )
         ]
         user = event.message.bot.get_user(user_data.id)
+        if not user: return
         await user.send(components=components)
 
         # add reaction 'white_check_mark'
