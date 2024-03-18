@@ -4,7 +4,7 @@ from interactions import slash_command, SlashContext
 from ._lang import account_name, account_desc
 
 
-class Connect(Extension):
+class PrivacyCmds(Extension):
     @slash_command(
         name=account_name,
         description=account_desc,

@@ -13,7 +13,7 @@ class ConnectCmd(Extension):
         sub_cmd_name=account_connect_name,
         sub_cmd_description=account_connect_desc
     )
-    async def account_connect(self, ctx: SlashContext):
+    async def account_connect_cmd(self, ctx: SlashContext):
         auth_client: AuthClient = ctx.bot.auth
         url = auth_client.generate_uri(
             scope=[
