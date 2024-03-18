@@ -14,6 +14,6 @@
 - [ ] setup Database
 - [ ] find host
 
-## docu
+## documentation
 
 - [x] explain OAuth2 solution
