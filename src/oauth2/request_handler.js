@@ -1,11 +1,11 @@
 addHandler('transform', (request, context) => {
     // get code query
+    console.log(request.parsed_query)
     const code = request.parsed_query["code"]
     if (code === undefined) {
         console.error("Code is undefined")
         return null
     }
-    console.log(code)
 
     // create a json like str
     const payload = {
