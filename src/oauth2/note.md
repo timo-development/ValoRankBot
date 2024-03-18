@@ -2,7 +2,7 @@
 
 In order to fetch a [Discord OAuth2 code](https://discord.com/developers/docs/topics/oauth2#authorization-code-grant), you would normally need your own web server.
 
-To make it easier, I'm using an Event Gateway Service called [Hookdeck.com](https://hookdeck.com/) to redirect OAuth2 codes to a private [Discord webhook](https://discord.com/developers/docs/resources/webhook).
+To make it easier, I'm using an Event Gateway Service called [Hookdeck.com](https://hookdeck.com/) to redirect OAuth2 codes to a private [Discord Webhook](https://discord.com/developers/docs/resources/webhook).
 
 Using an [request handler](./request_handler.js) you can modify the transformation of the data in a discord friendly format.
 
