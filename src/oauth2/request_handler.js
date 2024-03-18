@@ -1,70 +1,59 @@
 addHandler('transform', (request, context) => {
-
-    //functions to validate the args
+    function isValidInput(data) {
+        if (data === undefined || data === null) {
+            throw new Error("Invalid input: data is undefined or null");
+        }
+        return true;
+    }
 
     function isValidCode(given_code) {
-        // check if code is undefined
         if (given_code === undefined || given_code === null) {
-            console.warn("code has no value");
-            return false;
+            throw new Error("Invalid code: code has no value");
         }
-        return true
+        const code_regex = /^.{1,32}$/;
+        if (!code_regex.test(given_code)) {
+            throw new Error("Invalid code: " + given_code);
+        }
+        return true;
     }
 
     function isValidUserId(given_state) {
-        // Check if state is undefined or null
         if (given_state === undefined || given_state === null) {
-            console.warn("state has no value");
-            return false;
+            throw new Error("Invalid user ID: state has no value");
         }
-
-        // check if the string consists of only digits and has a length of 18
-        var regex = /^\d{18}$/;
-        if (!regex.test(given_state)) {
-            console.warn("state is not a valid user id");
-            return false
+        const state_regex = /^\d{18}$/;
+        if (!state_regex.test(given_state)) {
+            throw new Error("Invalid user ID: " + given_state);
         }
-        return true
+        return true;
     }
 
     function getUnixTimestamp() {
         const currentUnixTimestamp = Math.floor(Date.now() / 1000);
-        return currentUnixTimestamp
+        if (isNaN(currentUnixTimestamp)) {
+            throw new Error("Failed to generate timestamp");
+        }
+        return currentUnixTimestamp;
     }
 
-    // get queries
+    isValidInput(request.parsed_query);
+
     const code = request.parsed_query["code"];
     const state = request.parsed_query["state"];
 
-    // check if queries are okay
-    if (!isValidCode(code) || !isValidUserId(state)) {
-        console.error("Invalid data")
-        console.error("code: '" + code + "'")
-        console.error("state: '" + state + "'")
-        return null
-    }
-    console.log("data is okay")
+    isValidCode(code);
+    isValidUserId(state);
 
-    // create a json like str
-    const payload = {
-        code: code,
-        state: state,
-        time: getUnixTimestamp()
-    };
-    const jsonPayload = JSON.stringify(payload);
+    console.log("Data is okay");
 
+    const time = getUnixTimestamp();
 
-    // Create the body object with the extracted code
-    const body = {
-        content: jsonPayload
-    };
+    const payload = { code, state, time };
+    const body = { content: JSON.stringify(payload) };
 
-    // Update the request object with the new body
-    request.body = body;
-    request.headers['content-type'] = 'application/json';
+    const updatedRequest = { ...request, body };
+    updatedRequest.headers['content-type'] = 'application/json';
+    delete updatedRequest.query;
 
-    // Remove the parsed_query field as it's not needed anymore
-    delete request.query;
-
-    return request;
+    return updatedRequest;
 });
