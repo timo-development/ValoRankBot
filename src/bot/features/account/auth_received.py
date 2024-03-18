@@ -10,6 +10,7 @@ from utils import BotConfig, AuthEvent, UserData, Connection
 
 from ._lang import auth_received_choose_account
 
+
 class AuthReceived(Extension):
     @listen(MessageCreate)
     async def on_message_create(self, event: MessageCreate):
@@ -44,7 +45,6 @@ class AuthReceived(Extension):
 
             # get user data
             user_data = UserData(**access.fetch_identify())
-            print(user_data.locale)
 
             # get users connections
             connections_data = access.fetch_connections()
@@ -85,7 +85,8 @@ class AuthReceived(Extension):
             ActionRow(
                 StringSelectMenu(
                     options,
-                    placeholder=auth_received_choose_account.get(user_data.locale, 'en-GB'),
+                    placeholder=auth_received_choose_account.get(
+                        user_data.locale, 'en-GB'),
                     custom_id="connect_account"
                 )
             )
