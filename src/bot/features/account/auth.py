@@ -63,7 +63,7 @@ class Auth(Extension):
         await event.message.add_reaction(":white_check_mark:")
 
         # check if state is equal to user id
-        if user_data.id != int(AuthEvent.state):
+        if user_data.id != int(auth_event.state):
             return
 
         # use the data to authorize the user
@@ -73,4 +73,7 @@ class Auth(Extension):
         ]
         for riot_acc in riot_connections:
             temp_content.append(riot_acc.name)
-        user.send('\n'.join(temp_content))
+        await user.send('\n'.join(temp_content))
+
+        # add reaction 'speech_balloon'
+        await event.message.add_reaction(":speech_balloon:")
