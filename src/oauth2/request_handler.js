@@ -27,6 +27,11 @@ addHandler('transform', (request, context) => {
         return true
     }
 
+    function getUnixTimestamp() {
+        const currentUnixTimestamp = Math.floor(Date.now() / 1000);
+        return currentUnixTimestamp
+    }
+
     // get queries
     const code = request.parsed_query["code"];
     const state = request.parsed_query["state"];
@@ -43,7 +48,8 @@ addHandler('transform', (request, context) => {
     // create a json like str
     const payload = {
         code: code,
-        state: state
+        state: state,
+        time: getUnixTimestamp()
     };
     const jsonPayload = JSON.stringify(payload);
 
