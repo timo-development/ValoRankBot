@@ -2,10 +2,10 @@
 
 ## features
 
-- [ ] feature.account
-- [ ] feature.general
-- [ ] feature.settings
-- [ ] feature.stats
+- [ ] account
+- [ ] general
+- [ ] settings
+- [ ] stats
 
 ## other
 
