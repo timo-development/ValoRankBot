@@ -21,7 +21,7 @@ bot = Client(
 with open("src/bot/config.json", 'r', encoding="utf-8") as file:
     config_data: dict = load(file)
 
-# save config data bot class
+# save config data in bot class
 bot.config = BotConfig(**config_data)
 
 # define extensions to load
