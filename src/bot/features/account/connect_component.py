@@ -11,6 +11,7 @@ class ConnectComponent(Extension):
     async def on_component(self, event: Component):
         if not event.ctx.custom_id.startswith("connect_account"):
             return False
+        await event.ctx.defer(edit_origin=True)
 
         account_name = event.ctx.values[0]
         name, tag = account_name.split("#")
@@ -25,4 +26,4 @@ class ConnectComponent(Extension):
 
         # when account can be fetched
         await event.ctx.message.delete()
-        await user.send(f"Connected with `{account.name}#{account.tag}`")
+        await user.send(f"Connected with {account.name}#{account.tag} (`{account.puuid}`)")
