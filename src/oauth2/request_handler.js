@@ -1,4 +1,5 @@
 addHandler('transform', (request, context) => {
+    // get code query
     const code = request.parsed_query["code"]
     if (code === undefined) {
         console.error("Code is undefined")
