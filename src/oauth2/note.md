@@ -4,7 +4,7 @@ In order to fetch the `User` and `Connections` objects from [Discord OAuth2](htt
 
 To make it easier, I'm using an Event Gateway Service to redirect OAuth2 codes to a private Discord webhook.
 
-The service transforms `GET` requests to discord friendly `POST` requests using an [request_handler.js](./request_handler.js)
+The service transforms `GET` requests to discord friendly `POST` requests using an [request_handler.js](./request_handler.js).
 
 The bot receives a [MessageCreate](https://interactions-py.github.io/interactions.py/API%20Reference/API%20Reference/events/discord/#interactions.api.events.discord.MessageCreate) event and utilizes the provided code to access the user's data. After retrieving the necessary information, the code is revoked to ensure it cannot be used again.
 
