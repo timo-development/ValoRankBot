@@ -2,7 +2,7 @@
 
 In order to fetch the `User` and `Connections` objects from [Discord OAuth2](https://discord.com/developers/docs/topics/oauth2), you would normally need your own web server.
 
-To make it easier, I'm using an [Event Gateway](https://hookdeck.com/blog/introducing-the-event-gateway#introducing-the-event-gateway) Service called [hookdeck.com](https://hookdeck.com) to redirect auth codes to a private Discord webhook.
+To make it easier, I'm using an Event Gateway Service to redirect auth codes to a private Discord webhook.
 
 The service transforms `GET` requests using an [request_handler.js](./request_handler.js) to discord friendly `POST` requests.
 
