@@ -24,3 +24,9 @@
 
 - `/settings language {lang}` set the lang for the guild
 - `/settings rename_users {is_active}` should players be namned like their account names?
+
+---
+Weitere Ideen:
+
+- Rename user
+- give user role after connecting account

@@ -38,7 +38,8 @@ class ConnectComponent(Extension):
         guild = event.ctx.bot.get_guild(1219136466043670649)
         try:
             member = guild.get_member(event.ctx.author.id)
-            await member.edit_nickname(f"{account.name}#{account.tag}", reason="Valorant Account")
+            if member:
+                await member.edit_nickname(f"{account.name}#{account.tag}", reason="Valorant Account")
         except Forbidden:
             print("Bot can not rename")
         except Exception as e:
