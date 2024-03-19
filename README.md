@@ -16,6 +16,7 @@ If you have any questions or problems join the support server.
 
 ## Roadmap
 
+- [x] drinking coffee :coffee: 
 - [ ] first stable release
 
 ## Credits
