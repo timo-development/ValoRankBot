@@ -23,5 +23,7 @@ If you have any questions or problems join the support server.
 This project wouldn't have been possible without the fantastic work of the following libraries and APIs:
 
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=interactions-py&repo=interactions.py)](https://github.com/interactions-py/interactions.py)
+
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=Henrik-3&repo=unofficial-valorant-api)](https://github.com/Henrik-3/unofficial-valorant-api)
+
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=treeben77&repo=discord-oauth2.py)](https://github.com/treeben77/discord-oauth2.py)
