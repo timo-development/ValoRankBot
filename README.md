@@ -2,7 +2,7 @@
 
 A Discord bot for Valorant competitive stats and player insights
 
-[![Static Badge](https://img.shields.io/badge/INVITE%20BOT-%20?style=for-the-badge&logo=discord&color=grey)](https://discord.com/oauth2/authorize?client_id=1218897285593956473&permissions=413055437889&scope=bot+applications.commands)
+[![Static Badge](https://img.shields.io/badge/INVITE%20BOT-%20?style=for-the-badge&logo=discord&color=grey)](#)
 
 ## Features
 
