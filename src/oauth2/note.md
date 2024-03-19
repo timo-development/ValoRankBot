@@ -10,8 +10,6 @@ You can make your own api using this [Tutorial](https://github.com/treeben77/dis
 
 ## My Solution
 
-In order to receive a [Discord OAuth2 code](https://discord.com/developers/docs/topics/oauth2#authorization-code-grant), you would normally need your own web server like [Flask](https://github.com/pallets/flask) to receive the codes.
-
 To make it easier, I'm using an Event Gateway Service called [Hookdeck.com](https://hookdeck.com/) to redirect OAuth2 codes to a private [Discord Webhook](https://discord.com/developers/docs/resources/webhook).
 
 Using an [request handler](./request_handler.js) you can modify the transformation of the data in a discord friendly format.
