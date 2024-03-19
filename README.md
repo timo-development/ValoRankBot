@@ -2,26 +2,7 @@
 
 A Discord bot for Valorant competitive stats and player insights
 
-<style>
-    .round-btn {
-        display: inline-block;
-        padding: 10px 40px;
-        border-radius: 50px;
-        background-color: #7789d5;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-    }
-
-    .round-btn:hover {
-        background-color: #5f6da0;
-    }
-</style>
-<a href="#" class="round-btn">Invite Bot</a>
+[![Static Badge](https://img.shields.io/badge/INVITE%20BOT-%20?style=for-the-badge&logo=discord&color=grey)](https://discord.com/oauth2/authorize?client_id=1218897285593956473&permissions=413055437889&scope=bot+applications.commands)
 
 ## Features
 
@@ -48,7 +29,3 @@ This project wouldn't have been possible without the fantastic work of the follo
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=interactions-py&repo=interactions.py)](https://github.com/interactions-py/interactions.py)
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=Henrik-3&repo=unofficial-valorant-api)](https://github.com/Henrik-3/unofficial-valorant-api)
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=treeben77&repo=discord-oauth2.py)](https://github.com/treeben77/discord-oauth2.py)
-
-## Sponsoring
-
-soon
