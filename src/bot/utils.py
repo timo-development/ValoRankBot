@@ -11,6 +11,7 @@ class BotConfig:
     client_id: int
     client_secret: str
     support_server_id: int
+    valo_api_key: Optional[str]
 
 
 @dataclass
