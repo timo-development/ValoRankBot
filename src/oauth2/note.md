@@ -12,7 +12,7 @@ You can make your own api using this [Tutorial](https://github.com/treeben77/dis
 
 To make it easier, I'm using an Event Gateway Service called [Hookdeck.com](https://hookdeck.com/) to redirect OAuth2 codes to a private [Discord Webhook](https://discord.com/developers/docs/resources/webhook).
 
-Using an [request handler](./request_handler.js) you can modify the transformation of the data in a discord friendly format.
+Using an [request handler](./request_handler.js) you can modify the data in a discord friendly format.
 
 The bot receives a [MessageCreate](https://interactions-py.github.io/interactions.py/API%20Reference/API%20Reference/events/discord/#interactions.api.events.discord.MessageCreate) event and utilizes the provided code to access the user's data.
 
