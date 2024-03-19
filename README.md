@@ -8,15 +8,11 @@ A Discord bot for Valorant competitive stats and player insights
 
 soon
 
-## Status
-
-:x: not available
-
 ## Feedback and Support
 
 If you have any questions or problems join the support server.
 
-<a href="https://discord.com/invite/Kg6tS9FBcE" target="_blank"><img src="https://discordapp.com/api/guilds/1219136466043670649/widget.png?style=banner2"/></a>
+<a href="https://discord.com/invite/Kg6tS9FBcE" target="blank"><img src="https://discordapp.com/api/guilds/1219136466043670649/widget.png?style=banner2"/></a>
 
 ## Roadmap
 
