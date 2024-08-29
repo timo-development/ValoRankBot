@@ -1,4 +1,4 @@
-# [ValoRankBot](https://github.com/timo-development/ValoRankBot)
+# [ValoRankBot](https://github.com/timo-development/ValoRankBot) (DISCONTINUED)
 
 A Discord bot for Valorant competitive stats and player insights
 
